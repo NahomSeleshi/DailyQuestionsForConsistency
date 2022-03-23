@@ -7,10 +7,9 @@
 class Solution:
     def largestValues(self, root: Optional[TreeNode]) -> List[int]:
         answer = []
-        if root:
-            BFSTraversal = deque([root]) 
-        else: 
+        if not root:
             return []
+        BFSTraversal = deque([root]) 
         while BFSTraversal:
             size = len(BFSTraversal)
             currentMaximum = BFSTraversal[0].val
