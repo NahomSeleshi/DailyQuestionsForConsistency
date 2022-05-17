@@ -5,6 +5,11 @@
 #         self.left = None
 #         self.right = None
 
+# Here, we are sure that the target value is in the cloned tree too because it is a copy of the original tree. 
+# So, we are going to use a breadth first search algorithm to find the requested target. 
+# We will initialize our queue with the root of the cloned tree and strart our traversal. 
+# When we find it, we will return that node.
+
 class Solution:
     def getTargetCopy(self, original: TreeNode, cloned: TreeNode, target: TreeNode) -> TreeNode:
         queue = deque([cloned])
