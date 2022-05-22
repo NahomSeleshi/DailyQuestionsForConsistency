@@ -6,10 +6,9 @@ class Solution:
     def minimumLines(self, stockPrices: List[List[int]]) -> int:
         slopes = []
         stockPrices.sort()
-        if len(stockPrices) == 1: return 0
         
-        lines = 1
-        prevSlope = Fraction(stockPrices[1][1]-stockPrices[0][1], stockPrices[1][0]-stockPrices[0][0])
+        lines = 0
+        prevSlope = None
         for first, second in pairwise(stockPrices):
             newGradient = Fraction(second[1]-first[1], second[0]-first[0])
             if newGradient != prevSlope:
