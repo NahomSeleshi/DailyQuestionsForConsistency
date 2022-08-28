@@ -29,3 +29,19 @@ class Solution:
                 mat[matIndex[i][0]][matIndex[i][1]] = curDiagonal[i]
             rightwardCol += 1
         return mat
+
+
+# This is the solution I got from discuss
+class Solution:
+    def diagonalSort(self, mat: List[List[int]]) -> List[List[int]]:
+        d = defaultdict(list)
+        row, col = len(mat), len(mat[0])
+        for i in range(row):
+            for j in range(col):
+                d[i-j].append(mat[i][j])
+        for each in d:
+            d[each].sort(reverse = True)
+        for i in range(row):
+            for j in range(col):
+                mat[i][j] = d[i-j].pop()
+        return mat
