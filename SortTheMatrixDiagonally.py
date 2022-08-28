@@ -30,7 +30,6 @@ class Solution:
             rightwardCol += 1
         return mat
 
-
 # This is the solution I got from discuss
 class Solution:
     def diagonalSort(self, mat: List[List[int]]) -> List[List[int]]:
