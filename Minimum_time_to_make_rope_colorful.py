@@ -15,3 +15,21 @@ class Solution:
             minimumTime += sum(curTimes) -max(curTimes)
             
         return minimumTime
+
+# This is a solution that I found on Leetcode solution section and 
+# it is somehow optimized that my solution
+
+class Solution:
+    def minCost(self, colors: str, neededTime: List[int]) -> int:
+        i, j = 0, 0
+        minimumTime = 0
+        while i < len(colors) and j < len(colors):
+            curTotal, curMax = 0, 0
+            while j < len(colors) and colors[i] == colors[j]:
+                curTotal += neededTime[j]
+                curMax = max(curMax, neededTime[j])
+                j += 1
+            minimumTime += curTotal - curMax
+            i = j
+            
+        return minimumTime
