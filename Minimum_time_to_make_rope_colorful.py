@@ -17,7 +17,7 @@ class Solution:
         return minimumTime
 
 # This is a solution that I found on Leetcode solution section and 
-# it is somehow optimized that my solution
+# it is somehow optimized than my solution
 
 class Solution:
     def minCost(self, colors: str, neededTime: List[int]) -> int:
