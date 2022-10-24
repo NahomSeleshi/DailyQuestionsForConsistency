@@ -1,3 +1,20 @@
+# This solution is faster but I don't know why
+# It's time complexity is (I think) n*2^n
+# You will start a list which has 0 in it and add all the possibilities in it
+class Solution:
+    def canPartition(self, nums: List[int]) -> bool:
+        target = sum(nums)/2
+        all_possibilities = set([0])
+        for number in nums:
+            all_possibilities_new = list(all_possibilities)
+            for each in all_possibilities_new:
+                cur_number = number + each
+                if cur_number == target:
+                    return True
+                all_possibilities.add(cur_number)
+    
+        return False
+
 #This approach is similar to the knapsack problem.
 class Solution:
     def canPartition(self, nums: List[int]) -> bool:
